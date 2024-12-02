@@ -73,7 +73,7 @@ for batch in train_dataloader:
     print(batch["features"], batch["label"])
     break
 
-model_1 = IM(input_shape=int(X_train.shape[1]), hidden_units=50, output_shape=3)
+model_1 = IM(input_shape=int(X_train.shape[1]), hidden_units=10, output_shape=3)
 loss_fn = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(params=model_1.parameters(), lr=0.001)
 
@@ -153,7 +153,7 @@ for epoch in tqdm(range(epochs)):
         test_losses.append(running_test_loss / total_test)
         test_acc.append((correct_test / total_test) * 100)
 
-        if epoch % 10 == 0:
+        if epoch % 1 == 0:
             print(f"\nEpoch: {epoch}, Loss: {loss.item():.5f}, Test Loss: {test_loss.item():.5f}, "
                   f"Accuracy: {train_acc[-1]:.2f}, Accuracy Test: {test_acc[-1]:.2f}")
 
