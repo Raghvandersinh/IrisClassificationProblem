@@ -9,9 +9,9 @@ from torch.utils.data import DataLoader
 from tqdm.auto import tqdm
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder
-from Projects.IrisClassificationProblem.IrisModel import IrisModel as IM
 from timeit import default_timer as timer
 from IrisDataset import IrisDataset
+from IrisModel import IrisModel as IM
 
 kaggle.api.authenticate()
 device = "cuda" if torch.cuda.is_available() else "cpu"
